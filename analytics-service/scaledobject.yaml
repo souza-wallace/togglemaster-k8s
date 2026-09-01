@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: analytics-service
+  namespace: analytics-service
+  labels:
+    app: analytics-service
+spec:
+  scaleTargetRef:
+    name: analytics-service
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  cooldownPeriod: 300
+  triggers:
+    - type: aws-sqs-queue
+      authenticationRef:
+        name: analytics-service-aws
+      metadata:
+        queueURL: "https://sqs.us-east-1.amazonaws.com/980228515477/EvaluationServiceQueue.fifo"
+        queueLength: "5"
+        awsRegion: "us-east-1"

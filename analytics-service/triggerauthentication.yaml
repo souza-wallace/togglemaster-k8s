@@ -1,0 +1,12 @@
+# Liga o scaler SQS à IRSA do keda-operator (SA keda/keda-operator).
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: analytics-service-aws
+  namespace: analytics-service
+  labels:
+    app: analytics-service
+spec:
+  podIdentity:
+    provider: aws
+    identityOwner: keda
