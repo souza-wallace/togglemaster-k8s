@@ -16,6 +16,6 @@ spec:
       authenticationRef:
         name: analytics-service-aws
       metadata:
-        queueURL: "https://sqs.us-east-1.amazonaws.com/980228515477/EvaluationServiceQueue.fifo"
+        queueURL: "https://sqs.us-east-1.amazonaws.com/980228515477/togglemaster-events"
         queueLength: "5"
         awsRegion: "us-east-1"

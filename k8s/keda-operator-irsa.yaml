@@ -1,6 +1,6 @@
 # IRSA no ServiceAccount do KEDA Operator.
 #   kubectl annotate sa keda-operator -n keda \
-#     eks.amazonaws.com/role-arn=arn:aws:iam::980228515477:role/togglemaster-lab-analytics-service \
+#     eks.amazonaws.com/role-arn=arn:aws:iam::980228515477:role/togglemaster-analytics-role \
 #     --overwrite
 #   kubectl -n keda rollout restart deployment/keda-operator deployment/keda-operator-metrics-apiserver
 #
@@ -10,4 +10,4 @@ metadata:
   name: keda-operator
   namespace: keda
   annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::980228515477:role/togglemaster-lab-analytics-service"
+    eks.amazonaws.com/role-arn: "arn:aws:iam::980228515477:role/togglemaster-analytics-role"
