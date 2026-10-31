@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: targeting-service
-          image: 980228515477.dkr.ecr.us-east-1.amazonaws.com/targeting-service:v1.0.0-9dc5fbd
+          image: 980228515477.dkr.ecr.us-east-1.amazonaws.com/targeting-service:v1.0.0-c04d1bd
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
